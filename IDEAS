@@ -1,0 +1,17 @@
+Hacer clase animal
+    -Tendrá las propiedades de este
+    -Tendrá también, comentado, un método que te saque la edad en Años a partir de la fecha de nacimiento (un getter de los que no es necesario llamar a la función sino que se hace por detrás)
+
+//Hay que pensar en esto como si fuera una BBDD
+//Es por esto que no se ha hecho la store de forma que cada inserción de un dato realice un precálculo --- Podrían insertarse datos desde otras fuentes, podría haber caídas, etc
+Hacer clase Store
+    -Tendrá un array de instancias animal
+    -Tendrá tres métodos "auxiliares"
+        +Calcular la especie más repetida
+        +Calcular la media
+        +Calcular la media y la desviación típica (este método utilizaría el anterior)
+
+Hacer un singleton que devuelva una Store y tomarlo antes de lo del cluster del index
+
+
+Hacer JSDoc y Swagger de ambos
