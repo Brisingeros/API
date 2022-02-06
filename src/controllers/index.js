@@ -9,7 +9,7 @@ const zlib = require('zlib');
 const validator = require('../lib/validateApiSchema');
 const errorHandler = require('../lib/errorHandler');
 
-module.exports = function (app, store, logger) {
+module.exports = function (app, models, logger, store) {
   logger.info('Configuring API controllers');
 
   function loadController(controller, path) {
@@ -92,7 +92,7 @@ module.exports = function (app, store, logger) {
       if (/.*(?<!schema)\.js/.test(name)) {
         fullpath = fullpath.replace('.js', '');
 
-        let controller = require(fullpath)(store, logger); //InjectToController
+        let controller = require(fullpath)(models, logger, store); //InjectToController
         loadController(controller, fullpath);
       }
     }

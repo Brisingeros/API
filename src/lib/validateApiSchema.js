@@ -1,7 +1,11 @@
 'use strict';
 
 const Ajv = require('ajv');
+const addFormats = require("ajv-formats");
+
 const ajv = new Ajv();
+addFormats(ajv);
+
 const httpStatus = require('http-status');
 
 /**

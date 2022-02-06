@@ -8,7 +8,30 @@
  * Por mi parte, si no se diese el caso comentado en el primer punto, tomaría la unidad de edad en meses o días, dependiendo de los requerimientos del producto.
  */
 
-
+/**
+ * @swagger
+ * path:
+ *  /creamascota:
+ *    post:
+ *      summary: Creates an Animal and adds it to the Store
+ *      tags: [Pet]
+ *      requestBody:
+ *          description: All params of an Animal
+ *          required: true
+ *          content:
+ *            application/json:
+ *              schema:
+ *                  $ref: '#/components/schemas/Animal'
+ *      responses:
+ *        "200":
+ *          description: OK
+ *        "400":
+ *          description: BAD_REQUEST
+ *          content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schemas/NotValidApiSchema'
+ */
 const schema = {
     type: 'object',
     additionalProperties: false,
@@ -24,8 +47,8 @@ const schema = {
         },
         age: {
             type: 'number',
-            min: 0,
-            max: 99
+            minimum: 0,
+            maximum: 99
         },
         birthdate: {
             type: "string",

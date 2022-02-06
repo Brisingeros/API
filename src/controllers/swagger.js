@@ -14,10 +14,10 @@ const options = {
             }
         },
         servers: [
-            {
-                description: 'PRO',
-                url: process.env.BASE_URL
-            },
+            // {
+            //     description: 'PRO',
+            //     url: process.env.BASE_URL
+            // },
             {
                 description: 'TEST',
                 url: `http://localhost:${process.env.PORT}`
@@ -33,7 +33,7 @@ const options = {
             // }
         }
     },
-    apis: ['./src/controllers/modules/**/*.schema.js', './src/lib/*.js', './src/lib/**/*.js'],
+    apis: ['./src/controllers/modules/*.schema.js', './src/lib/*.js', './src/lib/**/*.js', './src/models/*.js'],
 };
 const specs = swaggerJsdoc(options);
 module.exports = specs;

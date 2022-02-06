@@ -1,3 +1,9 @@
+# VS Code
+.vscode
+
+# NPM
+package-lock.json
+
 # Logs
 logs
 *.log
@@ -97,11 +103,11 @@ dist
 # FuseBox cache
 .fusebox/
 
-#######################################################################
-IDEAS
-
 # DynamoDB Local files
 .dynamodb/
 
 # TernJS port file
 .tern-port
+
+#######################################################################
+IDEAS
