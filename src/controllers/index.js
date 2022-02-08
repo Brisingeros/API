@@ -35,16 +35,6 @@ module.exports = function (app, models, logger, store) {
           return;
         }
 
-        /////////////////////////////////////////////////
-
-        // if (req.headers['user-agent'] != null && /node\.js/gi.test(req.headers['user-agent'])) {
-        //   res.writeHead(res.statusCode, { 'content-type': `application/json` });
-        //   res.end(jsonFormat);
-        //   return;
-        // }
-
-        /////////////////////////////////////////////////
-
         if (jsonFormat.length < 5000) {
           res.writeHead(res.statusCode, { 'content-type': `application/json` });
           res.end(jsonFormat);
@@ -56,13 +46,6 @@ module.exports = function (app, models, logger, store) {
           res.end(result);
         });
       };
-
-      // res.jsonGzip = function (el) {
-      //   res.writeHead(res.statusCode, { 'content-type': `application/json`, 'content-encoding': 'gzip' });
-      //   res.end(el);
-      // };
-
-      /////////////////////////////////////////////////
 
       try {
         await controller.handler(req, res, next);
@@ -108,21 +91,10 @@ module.exports = function (app, models, logger, store) {
 
   router.use('/api-docs', swaggerUi.serve);
   router.get('/api-docs', (req, res, next) => {
-
-    //authAction añade una contraseña a la llamada en la que pongas / Sustituir JWT por la key que sea
-    /**
-      *  /clubs/{clubId}/users_birthday:
-      *    get:
-      *      summary: _Public_ Returns all users whose birhtday is in the requested time period
-      *      tags: [Club]
-      *      security:
-      *        - JWT: [] <------------------
-     */
     swaggerUi.setup(specs, {
       swaggerOptions: {
         filter: true,
         withCredentials: true,
-        //authAction :{ JWT: {name: "JWT", schema: {type: "apiKey", in: "header", name: "Authorization", description: ""}, value: "Bearer <JWT>"} }
         displayRequestDuration: true
       }
     })
@@ -133,7 +105,6 @@ module.exports = function (app, models, logger, store) {
       swaggerOptions: {
         filter: true,
         withCredentials: true,
-        //authAction :{ JWT: {name: "JWT", schema: {type: "apiKey", in: "header", name: "Authorization", description: ""}, value: "Bearer <JWT>"} }
         displayRequestDuration: true,
       }
     })

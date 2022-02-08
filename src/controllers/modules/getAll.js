@@ -15,7 +15,8 @@ module.exports = function injectToController(models, logger, store) {
         try {
             data = store.getAll(req.query.species)
         } catch (error) {
-            return res.status(httpStatus.CONFLICT).json(error);
+            let status = (error.error) ? httpStatus.CONFLICT : httpStatus.INTERNAL_SERVER_ERROR;
+            return res.status(status).json(error);
         }
 
         return res.status(httpStatus.OK).json(data);

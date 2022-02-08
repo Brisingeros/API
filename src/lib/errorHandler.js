@@ -17,7 +17,6 @@ module.exports = function errorHandler(logger, apiName, err, res) {
     const content = {
         message: 'Internal server error caused by: ' + (err.message || JSON.stringify(err)),
         referenceCode: err.referenceCode,
-
     };
     res.status(httpStatus.INTERNAL_SERVER_ERROR).json(content);
 };

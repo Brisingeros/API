@@ -65,7 +65,7 @@ class Store {
                 ageDeviation.push(animal.age);
             }
 
-            speciesMode[animal.species] = (speciesMode[animal.species] == null) ? 1 : speciesMode[animal.species]++;
+            speciesMode[animal.species] = (speciesMode[animal.species] == null) ? 1 : speciesMode[animal.species] + 1;
         });
 
         //////////
@@ -75,7 +75,7 @@ class Store {
         ageDeviation = ageDeviation.reduce(function (r, a) { r += Math.pow(Math.abs(a - ageMean), 2); return r; }, 0);
         ageDeviation = Math.sqrt(ageDeviation / occurrences);
 
-        speciesMode = Object.keys(speciesMode).reduce((a, b) => obj[a] > obj[b] ? a : b);
+        speciesMode = Object.keys(speciesMode).reduce((a, b) => speciesMode[a] > speciesMode[b] ? a : b);
 
         //////////
 
