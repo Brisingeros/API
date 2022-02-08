@@ -1,4 +1,4 @@
-[![Build Status]](https://github.com/Brisingeros/API/actions/workflows/Coverage/badge.svg)
+[![Build Status]](https://github.com/Brisingeros/API/workflows/Test/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/Brisingeros/API/badge.svg?branch=main)](https://coveralls.io/github/Brisingeros/API?branch=main)
 
 # API
