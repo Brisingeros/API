@@ -14,13 +14,9 @@ const options = {
             }
         },
         servers: [
-            // {
-            //     description: 'PRO',
-            //     url: process.env.BASE_URL
-            // },
             {
-                description: 'TEST',
-                url: `http://localhost:${process.env.PORT}`
+                description: 'API',
+                url: process.env.BASE_URL || `http://localhost:${process.env.PORT}`
             }
         ],
         components: {
